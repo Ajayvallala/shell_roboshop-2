@@ -43,7 +43,7 @@ app_setup()
      useradd --system --home /app --shell /sbin/nologin --comment "roboshop user" roboshop &>>$LOG_FILE
      VALIDATE $? "System user creation"
     else
-     echo -e "User already created so $Y skipping $N" | tree -a $LOG_FILE
+     echo -e "User already created so $Y skipping $N" | tee -a $LOG_FILE
     fi
 
     curl -o /tmp/$app_name.zip https://roboshop-artifacts.s3.amazonaws.com/$app_name-v3.zip &>>$LOG_FILE
