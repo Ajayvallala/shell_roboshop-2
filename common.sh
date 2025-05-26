@@ -20,7 +20,7 @@ checkroot(){
     else
     mkdir -p $LOG_FOLDER
     echo "Script excectation stated at $(date)" | tee -a $LOG_FILE
-    echo -e "$G You are running the script with root access$N" | tee -a $LOG_FILE
+    echo -e "You are running the script with $G root$N access" | tee -a $LOG_FILE
     fi
 }
 
