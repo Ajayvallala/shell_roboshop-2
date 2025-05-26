@@ -1,9 +1,10 @@
 #!/bin/bash
 
-START_TIME=(date +%s)
+START_TIME=$(date +%s)
 R="\e[31m"
 G="\e[32m"
 Y="\e[33m"
+N="\e[37m"
 
 USER_ID=$(id -u)
 LOG_FOLDER="/var/log/shell_scrip/"
