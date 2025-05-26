@@ -26,10 +26,10 @@ checkroot(){
 VALIDATE(){
     if [ $1 -ne 0 ]
     then
-     echo "$2 is : $R Failure $N" | tee -a $LOG_FILE
+     echo -e "$2 is : $R Failure $N" | tee -a $LOG_FILE
      exit 1
     else 
-     echo "$2 is : $G Success $N" | tee -a $LOG_FILE
+     echo -e "$2 is : $G Success $N" | tee -a $LOG_FILE
     fi
 }
 
@@ -82,7 +82,7 @@ appservice_setup(){
 
 Print_time(){
     END_TIME=$(date +%s)
-    TOTAL_TIME=$($END_TIME - $START_TIME) &>>$LOG_FILE
+    TOTAL_TIME=$(($END_TIME - $START_TIME)) &>>$LOG_FILE
     echo -e "Script execution completed successfully, total time took :$G $TOTAL_TIME second$N" | tee -a $LOG_FILE
 }
 
