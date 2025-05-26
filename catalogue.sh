@@ -18,10 +18,10 @@ VALIDATE $? "Copying Mongodb repo"
 dnf install mongodb-mongosh -y &>>$LOG_FILE
 VALIDATE $? "Installing Mongodb client to load the data"
 
-Status=$(mongosh --host mongodb.vallalas.store --eval 'db.getMongo().getDBNames().indexOf("catalogue")') &>>$LOG_FILE
+mongosh --host mongodb.vallalas.store --eval 'db.getMongo().getDBNames().indexOf("catalogue")' &>>$LOG_FILE
 
 if [ $? -ne 0 ]
-than
+ then
  mongosh --host mongodb.vallalas.store </app/db/master-data.js
  VALIDATE $? "Data loading to database"
 else

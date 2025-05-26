@@ -36,7 +36,7 @@ VALIDATE(){
 
 app_setup()
 {
-    id roboshop
+    id roboshop &>>$LOG_FILE
     if [ $? -ne 0 ]
     then
      mkdir -p /app
@@ -57,12 +57,16 @@ app_setup()
 
 nodejs_setup(){
     dnf module disable nodejs -y &>>$LOG_FILE
+    VALIDATE $? "Disabling nodejs"
 
     dnf module enable nodejs:20 -y &>>$LOG_FILE
+    VALIDATE $? "Enabling specific vesion of nodejs"
 
     dnf install nodejs -y &>>$LOG_FILE
+    VALIDATE $? "Installing nodejs"
 
     npm install &>>$LOG_FILE
+    VALIDATE $? "Installing dependencies"
 }
 
 appservice_setup(){
