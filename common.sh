@@ -2,8 +2,8 @@
 
 START_TIME=(date +%s)
 R="\e[31m"
-G="\e[32"
-Y="\e[33"
+G="\e[32m"
+Y="\e[33m"
 
 USER_ID=$(id -u)
 LOG_FOLDER="/var/log/shell_scrip/"
