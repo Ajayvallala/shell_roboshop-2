@@ -15,12 +15,12 @@ SCRIPT_DIR=$PWD
 checkroot(){
     if [ $USER_ID -ne 0 ]
     then 
-    echo -e "$R Please switch to root user to run the script $N" 
+    echo -e $R"Please switch to root user to run the script"$N
     exit 1
     else
     mkdir -p $LOG_FOLDER
     echo "Script excectation stated at $(date)" | tee -a $LOG_FILE
-    echo -e "You are running the script with $G root$N access" | tee -a $LOG_FILE
+    echo -e "You are running the script with$G root$N access" | tee -a $LOG_FILE
     fi
 }
 
