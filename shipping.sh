@@ -2,6 +2,8 @@
 
 app_name="shipping"
 
+source ./common.sh
+
 checkroot
 
 echo "Please enter mysql root password"

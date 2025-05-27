@@ -2,15 +2,23 @@
 
 app_name="mysql"
 
+source ./common.sh
+
 checkroot
 
-dnf install mysql-server -y
+dnf install mysql-server -y &>>$LOG_FILE
+VALIDATE $? "Installing mysql"
 
-systemctl enable mysqld
+systemctl enable mysqld &>>$LOG_FILE
+VALIDATE $? "Enabling mysql"
 
-systemctl start mysqld
+systemctl start mysqld &>>$LOG_FILE
+VALIDATE $? "Starting mysql"
 
-read -s Mysql_root_pass
+echo "Please enter mysql root password"
+read -s Mysql_root_pass &>>$LOG_FILE
 
-mysql_secure_installation --set-root-pass $Mysql_root_pass
+mysql_secure_installation --set-root-pass $Mysql_root_pass &>>$LOG_FILE
+
+Print_time
 
