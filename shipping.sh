@@ -34,7 +34,7 @@ then
 
 else
  echo "Data has been already loaded in to database so $Y skipping....$N"
-
+fi
 Print_time
 
 
