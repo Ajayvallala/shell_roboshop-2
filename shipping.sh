@@ -33,8 +33,9 @@ then
  mysql -h mysql.vallalas.store -u root -p$Mysql_root_passowrd < /app/db/master-data.sql &>>$LOG_FILE
 
 else
- echo "Data has been already loaded in to database so $Y skipping....$N"
+ echo -e "Data has been already loaded in to database so $Y skipping....$N"
 fi
+
 Print_time
 
 
