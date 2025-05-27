@@ -31,6 +31,7 @@ then
  mysql -h mysql.vallalas.store -u root -p$Mysql_root_password < /app/db/schema.sql &>>$LOG_FILE
  mysql -h mysql.vallalas.store -u root -p$Mysql_root_password < /app/db/app-user.sql &>>$LOG_FILE
  mysql -h mysql.vallalas.store -u root -p$Mysql_root_passowrd < /app/db/master-data.sql &>>$LOG_FILE
+ VALIDATE $? "Data successfully loaded into database"
 
 else
  echo -e "Data has been already loaded in to database so $Y skipping....$N"

@@ -21,7 +21,7 @@ VALIDATE $? "Installing Mongodb client to load the data"
 mongosh --host mongodb.vallalas.store --eval 'db.getMongo().getDBNames().indexOf("catalogue")' &>>$LOG_FILE
 
 if [ $? -lt 0 ]
- then
+then
  mongosh --host mongodb.vallalas.store < /app/db/master-data.js &>>$LOG_FILE
  VALIDATE $? "Data loading to database"
 else
