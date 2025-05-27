@@ -24,7 +24,7 @@ appservice_setup
 dnf install mysql -y &>>$LOG_FILE
 VALIDATE $? "Installing mysql client"
 
-mysql -h mysql.vallalas.store -u root -p$Mysql_root_password -e 'use cities' &>>$LOG_FILE
+mysql -h mysql.vallalas.store -uroot -p$Mysql_root_password -e 'use cities' &>>$LOG_FILE
 
 if [ $? -ne 0 ]
 then 
