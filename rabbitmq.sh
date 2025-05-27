@@ -19,7 +19,7 @@ VALIDATE $? "Enabling rabbitmq"
 systemctl start rabbitmq-server &>>$LOG_FILE
 VALIDATE $? "Starting rabbitmq"
 
-rabbitmqctl list_users | grep roboshop
+rabbitmqctl list_users | grep roboshop &>>$LOG_FILE
 
 if [ $? -ne 0 ]
 then
@@ -30,7 +30,8 @@ then
     VALIDATE $? "Setting permissions rabbitmq"
 else
  echo -e "User already created so $Y skipping$N..."
- 
+fi
+
 Print_time
 
 
