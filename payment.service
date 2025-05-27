@@ -9,7 +9,7 @@ Environment=CART_HOST=cart.vallalas.store
 Environment=CART_PORT=8080
 Environment=USER_HOST=user.vallalas.store
 Environment=USER_PORT=8080
-Environment=AMQP_HOST=rabbirmq.vallalas.store
+Environment=AMQP_HOST=rabbitmq.vallalas.store
 // highlight-end
 Environment=AMQP_USER=roboshop
 Environment=AMQP_PASS=roboshop123
