@@ -28,4 +28,6 @@ else
  echo -e "Data has been already loaded into database so $Y skipping....$N" | tee -a $LOG_FILE
 fi
 
+systemctl restart catalogue
+VALIDATE $? "Restarting catalogue service"
 Print_time
