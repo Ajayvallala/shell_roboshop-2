@@ -36,6 +36,9 @@ else
  echo -e "Data has been already loaded in to database so $Y skipping....$N"
 fi
 
+systemctl restart shipping &>>$LOG_FILE
+VALIDATE $? "Restarting shipping service"
+
 Print_time
 
 
